@@ -1,0 +1,70 @@
+```mermaid
+erDiagram
+    PAIS ||--o{ PROVINCIA : possui
+    PROVINCIA ||--o{ CIDADE : possui
+    CIDADE ||--o{ ENDERECO : localiza
+    ENDERECO ||--o{ FUNCIONARIO : "é morada de"
+    CARGO ||--o{ FUNCIONARIO : ocupa
+    FUNCAO ||--o{ FUNCIONARIO : exerce
+    POSTO_TRABALHO ||--o{ FUNCIONARIO : lota
+    FUNCIONARIO ||--o{ FILHO : possui
+    FUNCIONARIO ||--o{ TELEFONE : possui
+
+    PAIS {
+        int id_pais PK
+        varchar nome UK
+    }
+    PROVINCIA {
+        int id_provincia PK
+        varchar nome
+        int id_pais FK
+    }
+    CIDADE {
+        int id_cidade PK
+        varchar nome
+        int id_provincia FK
+    }
+    ENDERECO {
+        int id_endereco PK
+        varchar tipo_via
+        varchar nome_via
+        varchar numero
+        varchar bairro
+        int id_cidade FK
+    }
+    CARGO {
+        varchar cod_cargo PK
+        varchar designacao UK
+    }
+    FUNCAO {
+        varchar cod_funcao PK
+        varchar designacao UK
+    }
+    POSTO_TRABALHO {
+        int id_posto PK
+        varchar nome_posto UK
+    }
+    FUNCIONARIO {
+        int id_funcionario PK
+        varchar nome
+        date data_nascimento
+        varchar nuit UK
+        varchar bi UK
+        varchar email UK
+        date data_admissao
+        int id_endereco FK
+        varchar cod_cargo FK
+        varchar cod_funcao FK
+        int id_posto FK
+    }
+    FILHO {
+        int id_filho PK
+        int id_funcionario FK
+        varchar nome
+    }
+    TELEFONE {
+        int id_telefone PK
+        int id_funcionario FK
+        varchar numero
+    }
+```
