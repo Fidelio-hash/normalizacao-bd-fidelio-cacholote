@@ -27,4 +27,4 @@ Normalizar os dados de funcionários fornecidos numa folha de cálculo, passando
 O ficheiro `.mmd` pode ser aberto em ferramentas compatíveis com Mermaid ou renderizado no GitHub.
 
 ## Vídeo
-No momento da submissão, adicionar aqui o link do vídeo do YouTube definido como “não listado”, se necessário.
+https://youtu.be/to_t4wzKPes
